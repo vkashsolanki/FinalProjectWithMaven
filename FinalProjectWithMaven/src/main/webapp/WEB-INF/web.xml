@@ -1,0 +1,59 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+  <context-param>
+      <param-name>createTables</param-name>
+      <param-value>no</param-value>
+  </context-param>
+  
+  
+  <listener>
+  	<listener-class>listeners.ContextLsitener</listener-class>
+  </listener>
+  <listener>
+  	<listener-class>listeners.SessionListener</listener-class>
+  </listener>
+  
+  <servlet>
+  	<servlet-name>RegisterServlet</servlet-name>
+  	<display-name>RegisterServlet</display-name>
+  	<description></description>
+  	<servlet-class>servlets.RegisterServlet</servlet-class>
+  </servlet>
+  
+  <servlet>
+  	<servlet-name>Test</servlet-name>
+  	<display-name>Test</display-name>
+  	<description></description>
+  	<servlet-class>servlets.Test</servlet-class>
+  </servlet>
+  
+  <servlet>
+      <servlet-name>ConfigServlet</servlet-name>
+      <servlet-class>servlets.ConfigServlet</servlet-class>
+  
+<init-param>
+<param-name>image</param-name>
+<param-value>1.jpg</param-value>
+</init-param>
+      <load-on-startup>1</load-on-startup>
+      </servlet>
+  <servlet-mapping>
+      
+      <servlet-name>ConfigServlet</servlet-name>
+      <url-pattern>/ConfigServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+  	<servlet-name>RegisterServlet</servlet-name>
+  	<url-pattern>/RegisterServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>Test</servlet-name>
+  	<url-pattern>/Test</url-pattern>
+  </servlet-mapping>
+  
+</web-app>
